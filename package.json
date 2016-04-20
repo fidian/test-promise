@@ -1,0 +1,33 @@
+{
+    "name": "test-promise",
+    "version": "1.0.0",
+    "description": "Synchronous promises that are super helpful for testing.",
+    "author": "Tyler Akins <fidian@rumkin.com>",
+    "homepage": "https://github.com/fidian/test-promise",
+    "bugs": {
+        "url": "https://github.com/fidian/test-promise/issues"
+    },
+    "contributors": [
+        "Tyler Akins <fidian@rumkin.com> (http://rumkin.com)"
+    ],
+    "main": "lib/test-promise.js",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/fidian/test-promise.git"
+    },
+    "keywords": [
+        "promise",
+        "testing",
+        "synchronous",
+        "sync",
+        "debug"
+    ],
+    "devDependencies": {
+        "fid-umd": "*",
+        "jasmine-node": "*"
+    },
+    "license": "MIT",
+    "scripts": {
+        "umd": "fid-umd lib/*.js"
+    }
+}
