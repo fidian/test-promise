@@ -54,7 +54,7 @@ Let's suppose we are testing how your asynchronous code operates.  We want to pr
             startPromise = new TestPromise();
             startPromise.reject(new Error("fake error"));
             endPromise = yourObject.reverseAsync(startPromise);
-            expect(endPromise.status).toBe(false);
+            expect(endPromise.success).toBe(false);
             expect(endPromise.value).toBe(err);
         });
         it("lets you trigger success/failure when you like", function () {
@@ -62,9 +62,9 @@ Let's suppose we are testing how your asynchronous code operates.  We want to pr
 
             startPromise = new TestPromise();
             endPromise = yourObject.reverseAsync(startPromise);
-            expect(endPromise.status).toBe(null);
+            expect(endPromise.success).toBe(null);
             startPromise.resolve("testing");
-            expect(endPromise.status).toBe(true);
+            expect(endPromise.success).toBe(true);
             expect(endPromise.value).toBe("gnitset");
         });
         it("even supports you grabbing the success/error handlers", function () {
@@ -110,7 +110,10 @@ API
 
 * `new TestPromise()` - Creates a new TestPromise.
 * `new TestPromise(otherPromise)` - Attaches a new TestPromise to the result of `otherPromise`.
+* `promise.success()` - Returns `null` if the promise is not resolved and is not rejected.  Otherwise this returns an object that contains both the `.success` and `.value` properties.
+* `promise.success` - `true` if the promise was resolved, `false` if it was rejected and `null` otherwise.
 * `promise.then(success, failure)` - Works exactly as expected.
+* `promise.value` - The value of a resolved/rejected promise.  `null` while it is uncertain.
 
 
 [Dizzy]: https://github.com/tests-always-included/dizzy
