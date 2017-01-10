@@ -5,6 +5,8 @@ A simple, synchronous Promise object that is useful for tests.  Not completely [
 
 This is **ONLY** for testing code.  It uses the global function `spyOn` that is supplied by Jasmine.
 
+[![npm version][npm-badge]][npm-link]
+
 
 Including
 ---------
@@ -117,4 +119,6 @@ API
 
 
 [Dizzy]: https://github.com/tests-always-included/dizzy
+[npm-badge]: https://img.shields.io/npm/v/test-promise.svg
+[npm-link]: https://npmjs.org/package/test-promise
 [Promises/A+]: https://promisesaplus.com/
